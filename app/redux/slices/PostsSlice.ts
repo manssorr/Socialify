@@ -127,8 +127,8 @@ export const fetchMorePosts = createAsyncThunk(
 			return [];
 		} catch (err: any) {
 			const error: AxiosError = err;
-			console.log(`error.toJSON()`, JSON.stringify(error.toJSON(), null, 2));
-			return thunkAPI.rejectWithValue(error.toJSON());
+			// @ts-ignore
+			return thunkAPI.rejectWithValue(error.toJSON().message);
 		}
 	},
 );
@@ -144,8 +144,8 @@ export const fetchCommentsByPostId = createAsyncThunk(
 			return [];
 		} catch (err: any) {
 			const error: AxiosError = err;
-			console.log(`error.toJSON()`, JSON.stringify(error.toJSON(), null, 2));
-			return thunkAPI.rejectWithValue(error.toJSON());
+			// @ts-ignore
+			return thunkAPI.rejectWithValue(error.toJSON().message);
 		}
 	},
 );
@@ -163,7 +163,8 @@ export const fetchMoreCommentsByPostId = createAsyncThunk(
 			return [];
 		} catch (err: any) {
 			const error: AxiosError = err;
-			return thunkAPI.rejectWithValue(error.toJSON());
+			// @ts-ignore
+			return thunkAPI.rejectWithValue(error.toJSON().message);
 		}
 	},
 );
