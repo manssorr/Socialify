@@ -1,5 +1,6 @@
 package com.socialify
-
+import android.os.Bundle; // // for react-native-splash-screen
+import org.devio.rn.splashscreen.SplashScreenReactPackage; // for react-native-splash-screen
 import android.app.Application
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
@@ -20,6 +21,7 @@ class MainApplication : Application(), ReactApplication {
             PackageList(this).packages.apply {
               // Packages that cannot be autolinked yet can be added manually here, for example:
               // add(MyReactNativePackage())
+              add(SplashScreenReactPackage())  // for react-native-splash-screen
             }
 
         override fun getJSMainModuleName(): String = "index"
@@ -34,6 +36,7 @@ class MainApplication : Application(), ReactApplication {
     get() = getDefaultReactHost(this.applicationContext, reactNativeHost)
 
   override fun onCreate() {
+    SplashScreen.show(this);  // for react-native-splash-screen
     super.onCreate()
     SoLoader.init(this, false)
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {

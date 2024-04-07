@@ -20,6 +20,7 @@ const PostItem = ({post, onPress}: IProps) => {
 				<UserInfo user={{id: post.user_id}} />
 				{/* Content */}
 				<View style={styles.contentContainer}>
+					<AppText style={styles.txtTitle}>{post.title}</AppText>
 					<AppText>{post.body}</AppText>
 				</View>
 			</BoxWrapper>
@@ -32,5 +33,9 @@ export default PostItem;
 const styles = StyleSheet.create({
 	contentContainer: {
 		marginTop: 10,
+	},
+	txtTitle: {
+		fontWeight: 'bold',
+		marginBottom: 5,
 	},
 });

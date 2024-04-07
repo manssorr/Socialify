@@ -9,7 +9,7 @@ interface IProps {
 const CommentItem = ({comment}: IProps): React.ReactElement<IProps> => {
 	return (
 		<View>
-			<UserInfo user={{name: comment.name, id: comment.email}} />
+			<UserInfo idPrefix="" user={{name: comment.name, id: comment.email}} />
 			<AppText style={styles.txtContentContainer}>{comment.body}</AppText>
 		</View>
 	);

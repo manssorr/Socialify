@@ -7,10 +7,12 @@ interface IProps {
 		name?: string;
 		id: string | number;
 	};
+	idPrefix?: string;
 }
 
 const UserInfo = ({
 	user: {name = 'Unknown User', id},
+	idPrefix = '@',
 }: IProps): React.ReactElement<IProps> => {
 	return (
 		<View style={styles.userContainer}>
@@ -19,7 +21,10 @@ const UserInfo = ({
 			{/* User Name */}
 			<View style={styles.userInfo}>
 				<AppText style={styles.txtUserName}>{name}</AppText>
-				<AppText style={styles.txtId}>@{id}</AppText>
+				<AppText style={styles.txtId}>
+					{idPrefix}
+					{id}
+				</AppText>
 			</View>
 		</View>
 	);
