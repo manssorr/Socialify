@@ -14,10 +14,10 @@ import {reduxStorage} from '../utils/storage';
 import {AppStore} from './types';
 
 const persistConfig = {
-	key: 'roota',
+	key: 'root',
 	storage: reduxStorage,
 	version: 2,
-	blacklist: ['posts'],
+	blacklist: ['posts', 'comments'],
 };
 
 const rootReducer = combineReducers({

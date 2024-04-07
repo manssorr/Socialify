@@ -45,7 +45,8 @@ const postsSlice = createSlice({
 			state.isLoading = true;
 		});
 		builder.addCase(fetchPosts.rejected, (state, action) => {
-			state.error = action.error.message ?? 'Something went wrong';
+			state.error = (action.payload as string) ?? 'Something went wrong';
+
 			state.isLoading = false;
 		});
 
@@ -62,7 +63,7 @@ const postsSlice = createSlice({
 		});
 		builder.addCase(fetchMorePosts.pending, (state, action) => {});
 		builder.addCase(fetchMorePosts.rejected, (state, action) => {
-			state.error = action.error.message ?? 'Something went wrong';
+			state.error = (action.payload as string) ?? 'Something went wrong';
 		});
 
 		// posts/fetchCommentsByPostId
@@ -75,7 +76,8 @@ const postsSlice = createSlice({
 			state.isLoading = true;
 		});
 		builder.addCase(fetchCommentsByPostId.rejected, (state, action) => {
-			state.error = action.error.message ?? 'Something went wrong';
+			state.error = (action.payload as string) ?? 'Something went wrong';
+
 			state.isLoading = false;
 		});
 		// posts/fetchMoreCommentsByPostId
@@ -91,7 +93,7 @@ const postsSlice = createSlice({
 		});
 		builder.addCase(fetchMoreCommentsByPostId.pending, (state, action) => {});
 		builder.addCase(fetchMoreCommentsByPostId.rejected, (state, action) => {
-			state.error = action.error.message ?? 'Something went wrong';
+			state.error = (action.payload as string) ?? 'Something went wrong';
 		});
 	},
 });
@@ -107,8 +109,8 @@ export const fetchPosts = createAsyncThunk(
 			return [];
 		} catch (err: any) {
 			const error: AxiosError = err;
-			console.log(`error.toJSON()`, JSON.stringify(error.toJSON(), null, 2));
-			return thunkAPI.rejectWithValue(error.toJSON());
+			// @ts-ignore
+			return thunkAPI.rejectWithValue(error.toJSON().message);
 		}
 	},
 );

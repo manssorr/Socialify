@@ -18,8 +18,8 @@ export const usePostDetails = (postId: number) => {
 	const [loadMoreLoading, setGetMoreLoading] = useState(false);
 
 	useEffect(() => {
-		comments.length === 0 && dispatch(fetchCommentsByPostId(postId));
-	}, [dispatch]);
+		dispatch(fetchCommentsByPostId(postId));
+	}, [dispatch, postId]);
 
 	const loadMore = async () => {
 		if (comments.length >= 9 && !loadMoreLoading) {

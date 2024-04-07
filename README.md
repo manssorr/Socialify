@@ -1,22 +1,21 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Socialify
+
+React Native App for displaying a list of posts and their comments
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-## Step 1: Start the Metro Server
+## Step 1: Install packages
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- yarn
+- cd ios && pod install
+- visit "https://gorest.co.in/my-account/access-tokens" to get your own API key and add it in ./env/.env.development file
+  > **Hint**: You can use mine as well but make sure do not share it ;).
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Step 2: Start the Metro Server
 
-```bash
-# using npm
-npm start
-
-# OR using Yarn
 yarn start
-```
 
 ## Step 2: Start your Application
 
@@ -25,55 +24,44 @@ Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _roo
 ### For Android
 
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
 yarn android
 ```
 
 ### For iOS
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
 yarn ios
+OR
+Open `ios/Socialify.xcworkspace` in Xcode
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+# Overview
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+The app is designed to display a list of posts fetched from a third-party API using axios. The app should efficiently do network calls, error handling, state management, and data caching using redux presist store.
 
-## Step 3: Modifying your App
+# Technologies Used
 
-Now that you have successfully run the app, let's modify it.
+- React Native
+- gorest.co.in API for fetching posts and comments data.
+- TypeScript for static typing.
+- redux-toolkit for state management.
+- redux-persist for state persistence.
+- mmkv storage for state persistence.
+- react native splash screen for loading screen.
+- Jest for testing.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+# App Features
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+- Posts List: The app displays a list of posts fetched from the gorest API using the /posts endpoint.
 
-## Congratulations! :tada:
+- Infinite Scroll: The app should fetch more posts and comments when the user scrolls to the bottom of the posts list or comments list.
 
-You've successfully run and modified your React Native App. :partying_face:
+- Comments List: Users can view the list of comments for a specific post by clicking on it in the posts list.
 
-### Now what?
+- Post Details: Users can view detailed information about a specific post by clicking on it in the posts list.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+- Offline Mode: The app should cache data locally to enable offline functionality, allowing users to access previously fetched posts data even when there is no internet connection (requires at least one successful data fetch).
 
-# Troubleshooting
+- Error States: The app should gracefully handle scenarios where no data is available or when there is no internet connection, displaying appropriate error states.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- Unit Testing

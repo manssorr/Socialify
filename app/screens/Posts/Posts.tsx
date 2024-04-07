@@ -8,6 +8,7 @@ export const Posts = ({}: {}) => {
 		usePosts();
 
 	if (error) {
+		console.log(`error`, error);
 		showToast('ErrorInfo', error);
 	}
 

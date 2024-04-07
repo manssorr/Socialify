@@ -39,7 +39,10 @@ export const CommentsList = ({
 			)}
 			ListEmptyComponent={() => (
 				<View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-					<AppText style={{textAlign: 'center'}}> No comments found </AppText>
+					<AppText style={{textAlign: 'center', marginBottom: 10}}>
+						{' '}
+						No comments found{' '}
+					</AppText>
 				</View>
 			)}
 			onEndReached={loadMore}

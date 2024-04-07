@@ -2,28 +2,31 @@ import {AppText} from '@components';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Toast from 'react-native-toast-message';
+import {colors} from '@utils';
 
 type PropType = {
-	color: 'pink' | '#65B741';
+	color: 'red' | '#9e1876';
 	message: string;
 };
 
-const ToastComp = ({color, message}: PropType) => {
-	const toastStyle = styles(color);
-
+const ToastComponent = ({color, message}: PropType) => {
 	return (
-		<View style={toastStyle.toastContainer}>
-			<AppText style={toastStyle.message}>{message}</AppText>
+		<View
+			style={[
+				styles.toastContainer,
+				{borderColor: color, backgroundColor: color},
+			]}>
+			<AppText style={styles.message}>{message}</AppText>
 		</View>
 	);
 };
 
 export const toastConfig = {
 	ErrorInfo: ({text1}: {text1: string}) => (
-		<ToastComp color="pink" message={text1} />
+		<ToastComponent color="red" message={text1} />
 	),
 	SuccessInfo: ({text1}: {text1: string}) => (
-		<ToastComp color="#65B741" message={text1} />
+		<ToastComponent color="#9e1876" message={text1} />
 	),
 };
 export const showToast = (type: 'ErrorInfo' | 'SuccessInfo', msg: string) => {
@@ -33,17 +36,14 @@ export const showToast = (type: 'ErrorInfo' | 'SuccessInfo', msg: string) => {
 	});
 };
 
-const styles = (color: string) =>
-	StyleSheet.create({
-		toastContainer: {
-			backgroundColor: color,
-			padding: 20,
-			borderRadius: 10,
-			marginHorizontal: 5,
-			borderColor: color,
-			borderWidth: 1,
-			alignItems: 'center',
-			width: '90%',
-		},
-		message: {fontSize: 20, fontWeight: '700'},
-	});
+const styles = StyleSheet.create({
+	toastContainer: {
+		padding: 10,
+		borderRadius: 5,
+		marginHorizontal: 5,
+		borderWidth: 1,
+		alignItems: 'center',
+		width: '90%',
+	},
+	message: {fontSize: 20, fontWeight: '700', color: 'white'},
+});
