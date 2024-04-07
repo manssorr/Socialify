@@ -2,6 +2,20 @@
 
 React Native App for displaying a list of posts and their comments
 
+# Screenshots
+https://github.com/manssorr/Socialify/assets/19681362/0d7c9d87-2eaa-4d1d-886c-30f6ca81b2e8
+
+
+https://github.com/manssorr/Socialify/assets/19681362/0e541336-9f52-4fae-92b5-4ea4b5e79c0c
+
+<img src="[https://github.com/manssorr/Socialify/assets/19681362/0f0d28a8-2c1f-4af7-bd9c-6f5e8aba1140](https://github.com/manssorr/Socialify/assets/19681362/0f0d28a8-2c1f-4af7-bd9c-6f5e8aba1140)" width="200" height="400" />
+<img src="[https://github.com/manssorr/Socialify/assets/19681362/ab0a99bb-0c3b-4b24-b637-5d8f587a41d7](https://github.com/manssorr/Socialify/assets/19681362/ab0a99bb-0c3b-4b24-b637-5d8f587a41d7)" width="200" height="400" />
+<img src="[https://github.com/manssorr/Socialify/assets/19681362/567606d5-d58e-4356-8abf-bbe822c26d45](https://github.com/manssorr/Socialify/assets/19681362/567606d5-d58e-4356-8abf-bbe822c26d45)" width="200" height="400" />
+
+
+
+
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
