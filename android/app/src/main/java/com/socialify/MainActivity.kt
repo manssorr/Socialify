@@ -1,11 +1,19 @@
 package com.socialify
 
+import android.os.Bundle; // // for react-native-splash-screen
+import org.devio.rn.splashscreen.SplashScreenReactPackage; // for react-native-splash-screen
+
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 
 class MainActivity : ReactActivity() {
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    SplashScreen.show(this);
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
