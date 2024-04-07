@@ -8,4 +8,12 @@
         <item name="android:windowIsTranslucent">true</item> 
     </style>
 
+    <!-- SplashScreen theme. -->
+    <style name="SplashScreenTheme" parent="SplashScreen_SplashTheme">
+        <item name="colorPrimaryDark">@color/status_bar_color</item>
+    </style>
+
+    <style name="SplashScreenThemeBackground" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/screen</item>
+    </style>
 </resources>

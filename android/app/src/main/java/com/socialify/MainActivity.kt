@@ -1,7 +1,7 @@
 package com.socialify
-
 import android.os.Bundle; // // for react-native-splash-screen
 import org.devio.rn.splashscreen.SplashScreen; // here
+
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
@@ -12,7 +12,7 @@ class MainActivity : ReactActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    SplashScreen.show(this);
+    SplashScreen.show(this)
   }
 
   /**
