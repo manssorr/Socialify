@@ -3,7 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:editTextBackground">@layout/launch_screen.png</item>
+        <item name="android:editTextBackground">@layout/launch_screen</item>
         <!-- add this line to hide default splash screen -->
         <item name="android:windowIsTranslucent">true</item> 
     </style>

@@ -1,7 +1,7 @@
 package com.socialify
 
 import android.os.Bundle; // // for react-native-splash-screen
-import org.devio.rn.splashscreen.SplashScreenReactPackage; // for react-native-splash-screen
+import org.devio.rn.splashscreen.SplashScreen; // here
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
